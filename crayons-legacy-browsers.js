@@ -278,9 +278,11 @@ var MOUSE_L;
 var MOUSE_L_prev;
 var SOUND;
 var OBJS;
+var HEADERS;
 var begin_text;
 var gateClock;
 var all_anims;
+var gate_header;
 var gate_text;
 var slideClock;
 var slide_text;
@@ -332,6 +334,7 @@ async function experimentInit() {
   OBJS["short-red-crayon"] = make_img("short-red-crayon", `${OBJS_DIR}/shortred_whbg_transp.png`, CARD_POS0, CARD_SIZE);
   OBJS["long-yellow-crayon"] = make_img("long-yellow-crayon", `${OBJS_DIR}/longyellow_whbg_transp.png`, CARD_POS0, CARD_SIZE);
   OBJS["short-yellow-crayon"] = make_img("short-yellow-crayon", `${OBJS_DIR}/shortyellow_whbg_transp.png`, CARD_POS0, CARD_SIZE);
+  HEADERS = [null, "Rule 1 Teaching", "Rule 2 Teaching", "Rule 3 Teaching"];
   
   begin_text = new visual.TextStim({
     win: psychoJS.window,
@@ -351,6 +354,17 @@ async function experimentInit() {
   all_anims.push(anim_r2);
   all_anims.push(anim_r3);
   
+  gate_header = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'gate_header',
+    text: '',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, 0.4], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    color: new util.Color('black'),  opacity: undefined,
+    depth: -2.0 
+  });
+  
   gate_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'gate_text',
@@ -359,7 +373,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
     color: new util.Color('black'),  opacity: undefined,
-    depth: -2.0 
+    depth: -3.0 
   });
   
   // Initialize components for Routine "slide"
@@ -650,6 +664,7 @@ function gateRoutineBegin(snapshot) {
         SOUND_T = 0;
         SOUND.play();
     }
+    gate_header.text = HEADERS[ruleNum];
     [boxes, objs, times, xy0s, dxdys] = all_anims[ruleNum]();
     for (var box, _pj_c = 0, _pj_a = boxes, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
         box = _pj_a[_pj_c];
@@ -667,6 +682,7 @@ function gateRoutineBegin(snapshot) {
     
     // keep track of which components have finished
     gateComponents = [];
+    gateComponents.push(gate_header);
     gateComponents.push(gate_text);
     
     gateComponents.forEach( function(thisComponent) {
@@ -747,6 +763,16 @@ function gateRoutineEachFrame() {
     }
     
     
+    // *gate_header* updates
+    if (t >= 0.0 && gate_header.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      gate_header.tStart = t;  // (not accounting for frame time here)
+      gate_header.frameNStart = frameN;  // exact frame index
+      
+      gate_header.setAutoDraw(true);
+    }
+
+    
     // *gate_text* updates
     if (t >= 0.0 && gate_text.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -791,6 +817,7 @@ function gateRoutineEnd() {
         thisComponent.setAutoDraw(false);
       }
     });
+    gate_header.text = "";
     for (var box, _pj_c = 0, _pj_a = boxes, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
         box = _pj_a[_pj_c];
         box.autoDraw = false;
