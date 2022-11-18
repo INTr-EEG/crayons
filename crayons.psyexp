@@ -7,7 +7,7 @@
     <Param name="Data file delimiter" updates="None" val="auto" valType="str"/>
     <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expName, expInfo['ID'], expInfo['date'])" valType="code"/>
     <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
-    <Param name="Experiment info" updates="None" val="{'ID': '', 'Audio': &quot;['Yes', 'No']&quot;, 'Debug': &quot;['No', 'Yes']&quot;}" valType="code"/>
+    <Param name="Experiment info" updates="None" val="{'participant': '', 'Audio': &quot;['Yes', 'No']&quot;, 'Debug': &quot;['No', 'Yes']&quot;}" valType="code"/>
     <Param name="Force stereo" updates="None" val="True" valType="bool"/>
     <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
     <Param name="HTML path" updates="None" val="" valType="str"/>

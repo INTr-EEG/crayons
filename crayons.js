@@ -13,7 +13,7 @@ const { round } = util;
 
 // store info about the experiment session:
 let expName = 'crayons';  // from the Builder filename that created this script
-let expInfo = {'ID': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes']};
+let expInfo = {'participant': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes']};
 
 // Start code blocks for 'Before Experiment'
 
