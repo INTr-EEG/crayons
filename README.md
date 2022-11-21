@@ -25,7 +25,7 @@ trialNum         | trial number within block
 stimulus         | name of the stimulus
 corrAns          | name of the correct choice
 slideNum         | slide number (not contiguous for legacy reasons)
-ID               | subject ID
+participant      | participant ID
 Audio            | activate audio
 Debug            | activate debug mode
 
