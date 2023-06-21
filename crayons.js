@@ -2,9 +2,9 @@
  * Crayons Test *
  ****************/
 
-import { core, data, sound, util, visual } from './lib/psychojs-2021.2.3.js';
+import { core, data, sound, util, visual, hardware } from './lib/psychojs-2022.2.4.js';
 const { PsychoJS } = core;
-const { TrialHandler } = data;
+const { TrialHandler, MultiStairHandler } = data;
 const { Scheduler } = util;
 //some handy aliases as in the psychopy scripts;
 const { abs, sin, cos, PI: pi, sqrt } = Math;
@@ -13,9 +13,15 @@ const { round } = util;
 
 // store info about the experiment session:
 let expName = 'crayons';  // from the Builder filename that created this script
-let expInfo = {'participant': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes']};
+let expInfo = {
+    'participant': '',
+    'School': '',
+    'Audio': ["Yes", "No"],
+    'Debug': ["No", "Yes"],
+};
 
 // Start code blocks for 'Before Experiment'
+// Run 'Before Experiment' code from functions_g
 
 function make_button(name, text, pos, size) {
     return new visual.ButtonStim({"win": psychoJS.window, "text": text, "pos": pos, "letterHeight": 0.05, "size": size, "borderWidth": 0.005, "fillColor": "lightgrey", "borderColor": "darkgrey", "color": "black", "colorSpace": "rgb", "opacity": null, "bold": true, "italic": false, "padding": null, "anchor": "center", "name": name});
@@ -78,6 +84,7 @@ function round_dp(x, dp = 5) {
     return (Math.round((x * num)) / num);
 }
 
+// Run 'Before Experiment' code from gate_anim
 
 var boxes;
 var objs;
@@ -203,45 +210,49 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'resources/aud/rule-1-practice.m4a', 'path': 'resources/aud/rule-1-practice.m4a'},
-    {'name': 'resources/aud/rule-1-teaching.m4a', 'path': 'resources/aud/rule-1-teaching.m4a'},
-    {'name': 'resources/aud/rule-2-practice.m4a', 'path': 'resources/aud/rule-2-practice.m4a'},
-    {'name': 'resources/aud/rule-2-teaching.m4a', 'path': 'resources/aud/rule-2-teaching.m4a'},
-    {'name': 'resources/aud/rule-3-practice.m4a', 'path': 'resources/aud/rule-3-practice.m4a'},
     {'name': 'resources/aud/rule-3-teaching-part-1.m4a', 'path': 'resources/aud/rule-3-teaching-part-1.m4a'},
-    {'name': 'resources/aud/rule-3-teaching-part-2.m4a', 'path': 'resources/aud/rule-3-teaching-part-2.m4a'},
-    {'name': 'resources/aud/rule-3-teaching-part-3.m4a', 'path': 'resources/aud/rule-3-teaching-part-3.m4a'},
-    {'name': 'resources/aud/task-introduction.m4a', 'path': 'resources/aud/task-introduction.m4a'},
+    {'name': 'resources/imgs/continue.png', 'path': 'resources/imgs/continue.png'},
+    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
+    {'name': 'resources/aud/rule-2-teaching.m4a', 'path': 'resources/aud/rule-2-teaching.m4a'},
+    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
+    {'name': 'resources/imgs/crayons/longred_whbg_transp.png', 'path': 'resources/imgs/crayons/longred_whbg_transp.png'},
     {'name': 'resources/aud/trials-go.m4a', 'path': 'resources/aud/trials-go.m4a'},
     {'name': 'resources/aud/trials-practice-again.m4a', 'path': 'resources/aud/trials-practice-again.m4a'},
-    {'name': 'resources/imgs/continue.png', 'path': 'resources/imgs/continue.png'},
-    {'name': 'resources/imgs/crayons/boxlongoutline_whbg.png', 'path': 'resources/imgs/crayons/boxlongoutline_whbg.png'},
-    {'name': 'resources/imgs/crayons/boxlongred_whbg.png', 'path': 'resources/imgs/crayons/boxlongred_whbg.png'},
-    {'name': 'resources/imgs/crayons/boxshortoutline_whbg.png', 'path': 'resources/imgs/crayons/boxshortoutline_whbg.png'},
-    {'name': 'resources/imgs/crayons/boxshortred_whbg.png', 'path': 'resources/imgs/crayons/boxshortred_whbg.png'},
-    {'name': 'resources/imgs/crayons/longred_whbg_transp.png', 'path': 'resources/imgs/crayons/longred_whbg_transp.png'},
-    {'name': 'resources/imgs/crayons/longyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/longyellow_whbg_transp.png'},
-    {'name': 'resources/imgs/crayons/shortred_whbg_transp.png', 'path': 'resources/imgs/crayons/shortred_whbg_transp.png'},
-    {'name': 'resources/imgs/crayons/shortyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/shortyellow_whbg_transp.png'},
-    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
-    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
+    {'name': 'resources/aud/rule-3-teaching-part-3.m4a', 'path': 'resources/aud/rule-3-teaching-part-3.m4a'},
     {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
+    {'name': 'resources/imgs/crayons/boxlongred_whbg.png', 'path': 'resources/imgs/crayons/boxlongred_whbg.png'},
+    {'name': 'resources/imgs/crayons/shortyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/shortyellow_whbg_transp.png'},
+    {'name': 'resources/imgs/crayons/boxshortoutline_whbg.png', 'path': 'resources/imgs/crayons/boxshortoutline_whbg.png'},
+    {'name': 'resources/aud/rule-1-practice.m4a', 'path': 'resources/aud/rule-1-practice.m4a'},
+    {'name': 'resources/imgs/crayons/boxshortred_whbg.png', 'path': 'resources/imgs/crayons/boxshortred_whbg.png'},
+    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
+    {'name': 'resources/aud/rule-1-teaching.m4a', 'path': 'resources/aud/rule-1-teaching.m4a'},
     {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
-    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
-    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
     {'name': 'resources/seqs/crayons-2yo.csv', 'path': 'resources/seqs/crayons-2yo.csv'},
+    {'name': 'resources/imgs/crayons/longyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/longyellow_whbg_transp.png'},
+    {'name': 'resources/aud/rule-2-practice.m4a', 'path': 'resources/aud/rule-2-practice.m4a'},
+    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
+    {'name': 'resources/aud/rule-3-practice.m4a', 'path': 'resources/aud/rule-3-practice.m4a'},
+    {'name': 'resources/imgs/crayons/boxlongoutline_whbg.png', 'path': 'resources/imgs/crayons/boxlongoutline_whbg.png'},
+    {'name': 'resources/imgs/crayons/shortred_whbg_transp.png', 'path': 'resources/imgs/crayons/shortred_whbg_transp.png'},
+    {'name': 'resources/aud/task-introduction.m4a', 'path': 'resources/aud/task-introduction.m4a'},
+    {'name': 'resources/aud/rule-3-teaching-part-2.m4a', 'path': 'resources/aud/rule-3-teaching-part-2.m4a'}
   ]
 });
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
 
 
+var currentLoop;
 var frameDur;
 async function updateInfo() {
+  currentLoop = psychoJS.experiment;  // right now there are no loops
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
   expInfo['expName'] = expName;
-  expInfo['psychopyVersion'] = '2021.2.3';
+  expInfo['psychopyVersion'] = '2022.2.4';
   expInfo['OS'] = window.navigator.platform;
+
+  psychoJS.experiment.dataFileName = (("." + "/") + `data/${expInfo["participant"]}_${expInfo["School"]}_${expName}_${expInfo["date"]}`);
 
   // store frame rate of monitor if we can measure it successfully
   expInfo['frameRate'] = psychoJS.window.getActualFrameRate();
@@ -306,6 +317,7 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "begin"
   beginClock = new util.Clock();
+  // Run 'Begin Experiment' code from begin_code
   expVersion = "2022.09.25";
   AUD_DIR = "resources/aud";
   IMGS_DIR = "resources/imgs";
@@ -351,12 +363,14 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -2.0 
   });
   
   // Initialize components for Routine "gate"
   gateClock = new util.Clock();
+  // Run 'Begin Experiment' code from gate_anim
   all_anims = [null];
   all_anims.push(anim_r1);
   all_anims.push(anim_r2);
@@ -369,6 +383,7 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0.4], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -2.0 
   });
@@ -380,6 +395,7 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -3.0 
   });
@@ -393,12 +409,14 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -1.0 
   });
   
   // Initialize components for Routine "trial"
   trialClock = new util.Clock();
+  // Run 'Begin Experiment' code from trial_code
   score = 0;
   scores = [];
   cumulative_time = 0.0;
@@ -410,6 +428,7 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0.4], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -1.0 
   });
@@ -421,6 +440,7 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0, (- 0.05)], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -2.0 
   });
@@ -432,6 +452,7 @@ async function experimentInit() {
     font: 'Open Sans',
     units: undefined, 
     pos: [0.6, 0], height: 0.02,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
     color: new util.Color('black'),  opacity: undefined,
     depth: -3.0 
   });
@@ -455,12 +476,13 @@ function beginRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'begin'-------
+    //--- Prepare to start Routine 'begin' ---
     t = 0;
     beginClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from begin_code
     if (USE_AUDIO) {
         aud_file = `${AUD_DIR}/task-introduction.m4a`;
         SOUND = make_sound("intro", aud_file);
@@ -488,11 +510,12 @@ function beginRoutineBegin(snapshot) {
 
 function beginRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'begin'-------
+    //--- Loop for each frame of Routine 'begin' ---
     // get current time
     t = beginClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    // Run 'Each Frame' code from begin_code
     if ((t > SOUND_DUR)) {
         continueRoutine = false;
     } else {
@@ -554,14 +577,15 @@ function beginRoutineEachFrame() {
 }
 
 
-function beginRoutineEnd() {
+function beginRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'begin'-------
+    //--- Ending Routine 'begin' ---
     for (const thisComponent of beginComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     }
+    // Run 'End Routine' code from begin_code
     OBJS["long-red-crayon"].autoDraw = false;
     OBJS["long-red-crayon"].pos = CARD_POS0;
     OBJS["short-red-crayon"].autoDraw = false;
@@ -576,13 +600,16 @@ function beginRoutineEnd() {
     // the Routine "begin" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
     return Scheduler.Event.NEXT;
-  };
+  }
 }
 
 
 var trials;
-var currentLoop;
 function trialsLoopBegin(trialsLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -600,18 +627,18 @@ function trialsLoopBegin(trialsLoopScheduler, snapshot) {
     
     // Schedule all the trials in the trialList:
     for (const thisTrial of trials) {
-      const snapshot = trials.getSnapshot();
+      snapshot = trials.getSnapshot();
       trialsLoopScheduler.add(importConditions(snapshot));
       trialsLoopScheduler.add(gateRoutineBegin(snapshot));
       trialsLoopScheduler.add(gateRoutineEachFrame());
-      trialsLoopScheduler.add(gateRoutineEnd());
+      trialsLoopScheduler.add(gateRoutineEnd(snapshot));
       trialsLoopScheduler.add(slideRoutineBegin(snapshot));
       trialsLoopScheduler.add(slideRoutineEachFrame());
-      trialsLoopScheduler.add(slideRoutineEnd());
+      trialsLoopScheduler.add(slideRoutineEnd(snapshot));
       trialsLoopScheduler.add(trialRoutineBegin(snapshot));
       trialsLoopScheduler.add(trialRoutineEachFrame());
-      trialsLoopScheduler.add(trialRoutineEnd());
-      trialsLoopScheduler.add(endLoopIteration(trialsLoopScheduler, snapshot));
+      trialsLoopScheduler.add(trialRoutineEnd(snapshot));
+      trialsLoopScheduler.add(trialsLoopEndIteration(trialsLoopScheduler, snapshot));
     }
     
     return Scheduler.Event.NEXT;
@@ -620,9 +647,32 @@ function trialsLoopBegin(trialsLoopScheduler, snapshot) {
 
 
 async function trialsLoopEnd() {
+  // terminate loop
   psychoJS.experiment.removeLoop(trials);
-
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
+}
+
+
+function trialsLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
 }
 
 
@@ -638,12 +688,13 @@ function gateRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'gate'-------
+    //--- Prepare to start Routine 'gate' ---
     t = 0;
     gateClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from gate_code
     psychoJS.experiment.addData("expVersion", expVersion);
     is_practice = (tryNum !== "NA");
     is_first_practice = (tryNum === 1);
@@ -701,11 +752,12 @@ function gateRoutineBegin(snapshot) {
 
 function gateRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'gate'-------
+    //--- Loop for each frame of Routine 'gate' ---
     // get current time
     t = gateClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    // Run 'Each Frame' code from gate_code
     if ((ruleNum === 3)) {
         if (((t - SOUND_T) > SOUND_DUR)) {
             if ((aud_idx < 2)) {
@@ -814,14 +866,15 @@ function gateRoutineEachFrame() {
 }
 
 
-function gateRoutineEnd() {
+function gateRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'gate'-------
+    //--- Ending Routine 'gate' ---
     for (const thisComponent of gateComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     }
+    // Run 'End Routine' code from gate_code
     gate_header.text = "";
     for (var box, _pj_c = 0, _pj_a = boxes, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
         box = _pj_a[_pj_c];
@@ -843,8 +896,12 @@ function gateRoutineEnd() {
     // the Routine "gate" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
     return Scheduler.Event.NEXT;
-  };
+  }
 }
 
 
@@ -854,12 +911,13 @@ function slideRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'slide'-------
+    //--- Prepare to start Routine 'slide' ---
     t = 0;
     slideClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from slide_code
     if (((slideNum !== "NA") && (! skip_practice))) {
         slide = make_slide(slideNum);
         slide.autoDraw = true;
@@ -899,11 +957,12 @@ function slideRoutineBegin(snapshot) {
 
 function slideRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'slide'-------
+    //--- Loop for each frame of Routine 'slide' ---
     // get current time
     t = slideClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    // Run 'Each Frame' code from slide_code
     if ((((slideNum !== "NA") && (! skip_practice)) && (t > SOUND_DUR))) {
         continueRoutine = false;
     }
@@ -959,14 +1018,15 @@ function slideRoutineEachFrame() {
 }
 
 
-function slideRoutineEnd() {
+function slideRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'slide'-------
+    //--- Ending Routine 'slide' ---
     for (const thisComponent of slideComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     }
+    // Run 'End Routine' code from slide_code
     if (((slideNum !== "NA") && (! skip_practice))) {
         slide.autoDraw = false;
         if (USE_AUDIO) {
@@ -980,8 +1040,12 @@ function slideRoutineEnd() {
     // the Routine "slide" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
     return Scheduler.Event.NEXT;
-  };
+  }
 }
 
 
@@ -1006,12 +1070,13 @@ function trialRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //------Prepare to start Routine 'trial'-------
+    //--- Prepare to start Routine 'trial' ---
     t = 0;
     trialClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from trial_code
     if (skip_practice) {
         continueRoutine = false;
     }
@@ -1063,11 +1128,12 @@ function trialRoutineBegin(snapshot) {
 var feedback_delay;
 function trialRoutineEachFrame() {
   return async function () {
-    //------Loop for each frame of Routine 'trial'-------
+    //--- Loop for each frame of Routine 'trial' ---
     // get current time
     t = trialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    // Run 'Each Frame' code from trial_code
     if ((feedback_delay_start !== null)) {
         if (is_practice) {
             feedback_delay = 0.5;
@@ -1215,14 +1281,15 @@ function trialRoutineEachFrame() {
 }
 
 
-function trialRoutineEnd() {
+function trialRoutineEnd(snapshot) {
   return async function () {
-    //------Ending Routine 'trial'-------
+    //--- Ending Routine 'trial' ---
     for (const thisComponent of trialComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     }
+    // Run 'End Routine' code from trial_code
     box1.autoDraw = false;
     box2.autoDraw = false;
     if ((trialNum === maxScore)) {
@@ -1243,31 +1310,12 @@ function trialRoutineEnd() {
     // the Routine "trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
-    return Scheduler.Event.NEXT;
-  };
-}
-
-
-function endLoopIteration(scheduler, snapshot) {
-  // ------Prepare for next entry------
-  return async function () {
-    if (typeof snapshot !== 'undefined') {
-      // ------Check if user ended loop early------
-      if (snapshot.finished) {
-        // Check for and save orphaned data
-        if (psychoJS.experiment.isEntryEmpty()) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-        scheduler.stop();
-      } else {
-        const thisTrial = snapshot.getCurrentTrial();
-        if (typeof thisTrial === 'undefined' || !('isTrials' in thisTrial) || thisTrial.isTrials) {
-          psychoJS.experiment.nextEntry(snapshot);
-        }
-      }
-    return Scheduler.Event.NEXT;
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
     }
-  };
+    return Scheduler.Event.NEXT;
+  }
 }
 
 
