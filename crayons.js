@@ -1135,7 +1135,7 @@ function trialRoutineEachFrame() {
                 } else {
                     correct = 0;
                     if (is_practice) {
-                        trial_feedback.text = "\u274e Let's think again";
+                        trial_feedback.text = "\u274c Let's think again";
                     }
                 }
             }
