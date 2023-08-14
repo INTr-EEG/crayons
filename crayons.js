@@ -203,33 +203,33 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
-    {'name': 'resources/aud/rule-3-teaching-part-1.m4a', 'path': 'resources/aud/rule-3-teaching-part-1.m4a'},
     {'name': 'resources/aud/trials-practice-again.m4a', 'path': 'resources/aud/trials-practice-again.m4a'},
     {'name': 'resources/aud/rule-3-practice.m4a', 'path': 'resources/aud/rule-3-practice.m4a'},
-    {'name': 'resources/imgs/crayons/shortyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/shortyellow_whbg_transp.png'},
-    {'name': 'resources/seqs/crayons-2yo.csv', 'path': 'resources/seqs/crayons-2yo.csv'},
-    {'name': 'resources/imgs/crayons/longyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/longyellow_whbg_transp.png'},
-    {'name': 'resources/imgs/crayons/shortred_whbg_transp.png', 'path': 'resources/imgs/crayons/shortred_whbg_transp.png'},
-    {'name': 'resources/aud/rule-2-teaching.m4a', 'path': 'resources/aud/rule-2-teaching.m4a'},
-    {'name': 'resources/aud/rule-1-practice.m4a', 'path': 'resources/aud/rule-1-practice.m4a'},
-    {'name': 'resources/imgs/continue.png', 'path': 'resources/imgs/continue.png'},
-    {'name': 'resources/imgs/crayons/boxshortred_whbg.png', 'path': 'resources/imgs/crayons/boxshortred_whbg.png'},
-    {'name': 'resources/aud/rule-2-practice.m4a', 'path': 'resources/aud/rule-2-practice.m4a'},
-    {'name': 'resources/imgs/crayons/boxlongoutline_whbg.png', 'path': 'resources/imgs/crayons/boxlongoutline_whbg.png'},
-    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
-    {'name': 'resources/aud/rule-1-teaching.m4a', 'path': 'resources/aud/rule-1-teaching.m4a'},
-    {'name': 'resources/aud/rule-3-teaching-part-3.m4a', 'path': 'resources/aud/rule-3-teaching-part-3.m4a'},
-    {'name': 'resources/aud/task-introduction.m4a', 'path': 'resources/aud/task-introduction.m4a'},
-    {'name': 'resources/aud/rule-3-teaching-part-2.m4a', 'path': 'resources/aud/rule-3-teaching-part-2.m4a'},
     {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
-    {'name': 'resources/imgs/crayons/boxshortoutline_whbg.png', 'path': 'resources/imgs/crayons/boxshortoutline_whbg.png'},
-    {'name': 'resources/imgs/crayons/longred_whbg_transp.png', 'path': 'resources/imgs/crayons/longred_whbg_transp.png'},
-    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
+    {'name': 'resources/aud/rule-3-teaching-part-1.m4a', 'path': 'resources/aud/rule-3-teaching-part-1.m4a'},
+    {'name': 'resources/aud/rule-2-practice.m4a', 'path': 'resources/aud/rule-2-practice.m4a'},
+    {'name': 'resources/aud/rule-1-teaching.m4a', 'path': 'resources/aud/rule-1-teaching.m4a'},
     {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
+    {'name': 'resources/imgs/crayons/shortred_whbg_transp.png', 'path': 'resources/imgs/crayons/shortred_whbg_transp.png'},
+    {'name': 'resources/imgs/crayons/shortyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/shortyellow_whbg_transp.png'},
+    {'name': 'resources/aud/rule-1-practice.m4a', 'path': 'resources/aud/rule-1-practice.m4a'},
     {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
+    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
+    {'name': 'resources/aud/task-introduction.m4a', 'path': 'resources/aud/task-introduction.m4a'},
+    {'name': 'resources/aud/rule-2-teaching.m4a', 'path': 'resources/aud/rule-2-teaching.m4a'},
+    {'name': 'resources/seqs/crayons-2yo.csv', 'path': 'resources/seqs/crayons-2yo.csv'},
     {'name': 'resources/imgs/crayons/boxlongred_whbg.png', 'path': 'resources/imgs/crayons/boxlongred_whbg.png'},
-    {'name': 'resources/aud/trials-go.m4a', 'path': 'resources/aud/trials-go.m4a'}
+    {'name': 'resources/aud/rule-3-teaching-part-3.m4a', 'path': 'resources/aud/rule-3-teaching-part-3.m4a'},
+    {'name': 'resources/imgs/crayons/longyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/longyellow_whbg_transp.png'},
+    {'name': 'resources/imgs/continue.png', 'path': 'resources/imgs/continue.png'},
+    {'name': 'resources/aud/rule-3-teaching-part-2.m4a', 'path': 'resources/aud/rule-3-teaching-part-2.m4a'},
+    {'name': 'resources/imgs/crayons/boxshortoutline_whbg.png', 'path': 'resources/imgs/crayons/boxshortoutline_whbg.png'},
+    {'name': 'resources/aud/trials-go.m4a', 'path': 'resources/aud/trials-go.m4a'},
+    {'name': 'resources/imgs/crayons/longred_whbg_transp.png', 'path': 'resources/imgs/crayons/longred_whbg_transp.png'},
+    {'name': 'resources/imgs/crayons/boxshortred_whbg.png', 'path': 'resources/imgs/crayons/boxshortred_whbg.png'},
+    {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
+    {'name': 'resources/imgs/crayons/boxlongoutline_whbg.png', 'path': 'resources/imgs/crayons/boxlongoutline_whbg.png'},
+    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'}
   ]
 });
 
@@ -1129,13 +1129,13 @@ function trialRoutineEachFrame() {
                 if ((choice === corrAns)) {
                     correct = 1;
                     if (is_practice) {
-                        trial_feedback.text = "Correct!";
+                        trial_feedback.text = "\u2705 Correct!";
                     }
                     score += 1;
                 } else {
                     correct = 0;
                     if (is_practice) {
-                        trial_feedback.text = "Let's think again";
+                        trial_feedback.text = "\u274e Let's think again";
                     }
                 }
             }
