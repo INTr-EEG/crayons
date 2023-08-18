@@ -13,7 +13,7 @@ const { round } = util;
 
 // store info about the experiment session:
 let expName = 'crayons';  // from the Builder filename that created this script
-let expInfo = {'participant': '', 'School': '', 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes']};
+let expInfo = {'participant': '', 'School': '', 'Number of Rules': [2, 3], 'Audio': ['Yes', 'No'], 'Debug': ['No', 'Yes']};
 
 // Start code blocks for 'Before Experiment'
 
@@ -203,33 +203,33 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
+    {'name': 'resources/imgs/crayons/boxlongred_whbg.png', 'path': 'resources/imgs/crayons/boxlongred_whbg.png'},
     {'name': 'resources/aud/trials-practice-again.m4a', 'path': 'resources/aud/trials-practice-again.m4a'},
     {'name': 'resources/aud/rule-3-practice.m4a', 'path': 'resources/aud/rule-3-practice.m4a'},
-    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
-    {'name': 'resources/aud/rule-3-teaching-part-1.m4a', 'path': 'resources/aud/rule-3-teaching-part-1.m4a'},
-    {'name': 'resources/aud/rule-2-practice.m4a', 'path': 'resources/aud/rule-2-practice.m4a'},
-    {'name': 'resources/aud/rule-1-teaching.m4a', 'path': 'resources/aud/rule-1-teaching.m4a'},
-    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
-    {'name': 'resources/imgs/crayons/shortred_whbg_transp.png', 'path': 'resources/imgs/crayons/shortred_whbg_transp.png'},
-    {'name': 'resources/imgs/crayons/shortyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/shortyellow_whbg_transp.png'},
     {'name': 'resources/aud/rule-1-practice.m4a', 'path': 'resources/aud/rule-1-practice.m4a'},
-    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
-    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
     {'name': 'resources/aud/task-introduction.m4a', 'path': 'resources/aud/task-introduction.m4a'},
-    {'name': 'resources/aud/rule-2-teaching.m4a', 'path': 'resources/aud/rule-2-teaching.m4a'},
-    {'name': 'resources/seqs/crayons-2yo.csv', 'path': 'resources/seqs/crayons-2yo.csv'},
-    {'name': 'resources/imgs/crayons/boxlongred_whbg.png', 'path': 'resources/imgs/crayons/boxlongred_whbg.png'},
-    {'name': 'resources/aud/rule-3-teaching-part-3.m4a', 'path': 'resources/aud/rule-3-teaching-part-3.m4a'},
-    {'name': 'resources/imgs/crayons/longyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/longyellow_whbg_transp.png'},
-    {'name': 'resources/imgs/continue.png', 'path': 'resources/imgs/continue.png'},
-    {'name': 'resources/aud/rule-3-teaching-part-2.m4a', 'path': 'resources/aud/rule-3-teaching-part-2.m4a'},
     {'name': 'resources/imgs/crayons/boxshortoutline_whbg.png', 'path': 'resources/imgs/crayons/boxshortoutline_whbg.png'},
-    {'name': 'resources/aud/trials-go.m4a', 'path': 'resources/aud/trials-go.m4a'},
-    {'name': 'resources/imgs/crayons/longred_whbg_transp.png', 'path': 'resources/imgs/crayons/longred_whbg_transp.png'},
+    {'name': 'resources/imgs/slides/slide-09.png', 'path': 'resources/imgs/slides/slide-09.png'},
+    {'name': 'resources/aud/rule-2-practice.m4a', 'path': 'resources/aud/rule-2-practice.m4a'},
+    {'name': 'resources/aud/rule-3-teaching-part-1.m4a', 'path': 'resources/aud/rule-3-teaching-part-1.m4a'},
+    {'name': 'resources/aud/rule-2-teaching.m4a', 'path': 'resources/aud/rule-2-teaching.m4a'},
+    {'name': 'resources/imgs/crayons/shortyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/shortyellow_whbg_transp.png'},
+    {'name': 'resources/imgs/slides/slide-03.png', 'path': 'resources/imgs/slides/slide-03.png'},
+    {'name': 'resources/aud/rule-3-teaching-part-3.m4a', 'path': 'resources/aud/rule-3-teaching-part-3.m4a'},
     {'name': 'resources/imgs/crayons/boxshortred_whbg.png', 'path': 'resources/imgs/crayons/boxshortred_whbg.png'},
+    {'name': 'resources/imgs/crayons/longyellow_whbg_transp.png', 'path': 'resources/imgs/crayons/longyellow_whbg_transp.png'},
+    {'name': 'resources/imgs/crayons/longred_whbg_transp.png', 'path': 'resources/imgs/crayons/longred_whbg_transp.png'},
+    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'},
+    {'name': 'resources/imgs/continue.png', 'path': 'resources/imgs/continue.png'},
+    {'name': 'resources/imgs/crayons/shortred_whbg_transp.png', 'path': 'resources/imgs/crayons/shortred_whbg_transp.png'},
     {'name': 'resources/imgs/slides/slide-07.png', 'path': 'resources/imgs/slides/slide-07.png'},
+    {'name': 'resources/imgs/slides/slide-06.png', 'path': 'resources/imgs/slides/slide-06.png'},
+    {'name': 'resources/imgs/slides/slide-10.png', 'path': 'resources/imgs/slides/slide-10.png'},
+    {'name': 'resources/aud/rule-1-teaching.m4a', 'path': 'resources/aud/rule-1-teaching.m4a'},
     {'name': 'resources/imgs/crayons/boxlongoutline_whbg.png', 'path': 'resources/imgs/crayons/boxlongoutline_whbg.png'},
-    {'name': 'resources/imgs/slides/slide-04.png', 'path': 'resources/imgs/slides/slide-04.png'}
+    {'name': 'resources/aud/rule-3-teaching-part-2.m4a', 'path': 'resources/aud/rule-3-teaching-part-2.m4a'},
+    {'name': 'resources/seqs/crayons-2yo.csv', 'path': 'resources/seqs/crayons-2yo.csv'},
+    {'name': 'resources/aud/trials-go.m4a', 'path': 'resources/aud/trials-go.m4a'}
   ]
 });
 
@@ -266,6 +266,9 @@ var SLIDES_DIR;
 var SEQ_FILE;
 var SHOW_DEBUG;
 var USE_AUDIO;
+var SELECTED_RULE;
+var row_end_index;
+var selected_rows;
 var PICTURE_DELAY;
 var MIN_DIST_SQ;
 var SLIDE_W;
@@ -314,6 +317,12 @@ async function experimentInit() {
   SEQ_FILE = "resources/seqs/crayons-2yo.csv";
   SHOW_DEBUG = (expInfo["Debug"] === "Yes");
   USE_AUDIO = (expInfo["Audio"] === "Yes");
+  SELECTED_RULE = Number.parseInt(expInfo["Number of Rules"]);
+  row_end_index = 44;
+  if ((SELECTED_RULE === 3)) {
+      row_end_index = 66;
+  }
+  selected_rows = `0:${row_end_index}`;
   PICTURE_DELAY = 0.1;
   MIN_DIST_SQ = (0.005 * 0.005);
   SLIDE_W = 1.0;
@@ -504,6 +513,7 @@ function beginRoutineEachFrame() {
     }
     if (SHOW_DEBUG) {
         begin_text.text = `
+    row_end_index = ${row_end_index}
     aud_file = ${aud_file}
     SOUND_DUR = ${round(SOUND_DUR, 3)}
     t = ${round(t, 3)}`
@@ -592,7 +602,7 @@ function trialsLoopBegin(trialsLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: TrialHandler.importConditions(psychoJS.serverManager, SEQ_FILE, '0:'),
+      trialList: TrialHandler.importConditions(psychoJS.serverManager, SEQ_FILE, selected_rows),
       seed: undefined, name: 'trials'
     });
     psychoJS.experiment.addLoop(trials); // add the loop to the experiment
